@@ -47,37 +47,28 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <Webcam
-          ref={webcamRef}
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zIndex: 9,
-            width: 640,
-            height: 480,
-          }}
-        />
-        <canvas
-          ref={canvasRef}
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zIndex: 9,
-            width: 640,
-            height: 480,
-          }}
-        />
+    <div className="app">
+      <header className="app-header">
+        <h1>Face Detection App</h1>
+        <p>Real-time facial detection using TensorFlow.js and FaceMesh.</p>
       </header>
+
+      <main className="app-main">
+        <div className="detection-area">
+          <Webcam
+            ref={webcamRef}
+            className="webcam"
+          />
+          <canvas
+            ref={canvasRef}
+            className="canvas"
+          />
+        </div>
+      </main>
+
+      <footer className="app-footer">
+        <p>Powered by TensorFlow.js & React</p>
+      </footer>
     </div>
   );
 }
